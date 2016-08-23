@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+	
+	
+  <!-- подключаем стили Mocha, для отображения результатов -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <!-- подключаем библиотеку Mocha -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <!-- настраиваем Mocha: предстоит BDD-тестирование -->
+  <script>
+    mocha.setup('bdd');
+  </script>
+
+  <!-- подключаем chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <!-- в chai есть много всего, выносим assert в глобальную область -->
+  <script>
+    var assert = chai.assert;
+  </script>
+	
+</head>
+<body>
+<p style="margin-top: 20px">
+    !Старт!
+</p>
+<p>И окончание</p>
+<div style="margin-top: 10px">
+    <img src="images/doGuruYoga.jpg">
+</div>
+    <!-- <script defer src="testFile.js"></script>-->
+    <script>
+
+	function isNumeric(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n)
+	}
+	
+
+	function summaArr () {
+		var numericAr = [];
+		var sum = 0;
+		for (var i=0;; i++) {
+			numericAr[i] = prompt ("Введите число для суммы");
+			if (!isNumeric(numericAr[i])) {
+				break;
+			}
+			sum +=  +numericAr[i];
+		}
+		return sum;
+	}
+	alert (summaArr());
+	
+	
+	function giveKeyAndVal (object) {
+		var message = "", counter = 0;
+		for (var key in object) {
+			message+="У свойства  " + key + "  значение  " + object[key]+ "\n";
+			counter++;
+		}
+		return (message+="У "+object+ " Всего свойств " + counter);
+	}
+	</script>
+</body>
+</html>
